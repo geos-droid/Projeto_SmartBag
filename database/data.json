@@ -1,0 +1,312 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "criado_em": "2026-09-30T01:56:42.699Z",
+      "nome": "Geovana",
+      "email": "geovanarosane2009@gmail.com",
+      "telefone": "+5571996223641",
+      "tipo": "consumidor",
+      "senha_hash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
+    }
+  ],
+  "sessions": [
+    {
+      "token": "c18f62ab4259c80692a28f9c538ad883653cb4ef4a2fce63",
+      "user_id": 1,
+      "criado_em": "2026-09-30T01:56:47.509Z"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "nome": "Pao integral Pullman",
+      "categoria": "padaria",
+      "preco": 5.7,
+      "estoque": 18,
+      "fab": "23/09/26",
+      "val": "07/10/26",
+      "emoji": "Pao",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 2,
+      "nome": "Pao frances (kg)",
+      "categoria": "padaria",
+      "preco": 9.9,
+      "estoque": 25,
+      "fab": "28/09/26",
+      "val": "29/09/26",
+      "emoji": "Pao frances",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 3,
+      "nome": "Bolo de fuba caseiro",
+      "categoria": "padaria",
+      "preco": 12.5,
+      "estoque": 8,
+      "fab": "27/09/26",
+      "val": "01/10/26",
+      "emoji": "Bolo",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 4,
+      "nome": "Torrada Bauducco",
+      "categoria": "padaria",
+      "preco": 6.4,
+      "estoque": 20,
+      "fab": "29/08/26",
+      "val": "27/11/26",
+      "emoji": "Torrada",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 5,
+      "nome": "Coxa e sobrecoxa de frango (kg)",
+      "categoria": "acougue",
+      "preco": 11.9,
+      "estoque": 15,
+      "fab": "27/09/26",
+      "val": "30/09/26",
+      "emoji": "Frango",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 6,
+      "nome": "Patinho bovino moido (kg)",
+      "categoria": "acougue",
+      "preco": 28.9,
+      "estoque": 10,
+      "fab": "27/09/26",
+      "val": "30/09/26",
+      "emoji": "Carne moida",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 7,
+      "nome": "Linguica toscana (kg)",
+      "categoria": "acougue",
+      "preco": 16.5,
+      "estoque": 12,
+      "fab": "26/09/26",
+      "val": "01/10/26",
+      "emoji": "Linguica",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 8,
+      "nome": "File de tilapia (kg)",
+      "categoria": "acougue",
+      "preco": 24.9,
+      "estoque": 6,
+      "fab": "27/09/26",
+      "val": "29/09/26",
+      "emoji": "Peixe",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 9,
+      "nome": "Margarina Qualy 500g",
+      "categoria": "frios",
+      "preco": 5.99,
+      "estoque": 15,
+      "fab": "08/09/26",
+      "val": "23/10/26",
+      "emoji": "Margarina",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 10,
+      "nome": "Queijo mussarela fatiado 400g",
+      "categoria": "frios",
+      "preco": 14.9,
+      "estoque": 10,
+      "fab": "18/09/26",
+      "val": "10/10/26",
+      "emoji": "Queijo",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 11,
+      "nome": "Presunto cozido fatiado 200g",
+      "categoria": "frios",
+      "preco": 8.5,
+      "estoque": 14,
+      "fab": "23/09/26",
+      "val": "06/10/26",
+      "emoji": "Presunto",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 12,
+      "nome": "Iogurte natural integral 900g",
+      "categoria": "frios",
+      "preco": 7.2,
+      "estoque": 18,
+      "fab": "25/09/26",
+      "val": "08/10/26",
+      "emoji": "Iogurte",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 13,
+      "nome": "Leite integral UHT 1L",
+      "categoria": "frios",
+      "preco": 4.6,
+      "estoque": 30,
+      "fab": "13/09/26",
+      "val": "12/11/26",
+      "emoji": "Leite",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 14,
+      "nome": "Suco de uva integral 1L",
+      "categoria": "bebidas",
+      "preco": 9.9,
+      "estoque": 20,
+      "fab": "18/09/26",
+      "val": "27/12/26",
+      "emoji": "Suco",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 15,
+      "nome": "Refrigerante cola 2L",
+      "categoria": "bebidas",
+      "preco": 7.5,
+      "estoque": 25,
+      "fab": "29/08/26",
+      "val": "25/02/27",
+      "emoji": "Refrigerante",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 16,
+      "nome": "Vinho tinto seco 750ml",
+      "categoria": "bebidas",
+      "preco": 22.9,
+      "estoque": 8,
+      "fab": "30/07/26",
+      "val": "25/07/27",
+      "emoji": "Vinho",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 17,
+      "nome": "Agua de coco 1L",
+      "categoria": "bebidas",
+      "preco": 6.9,
+      "estoque": 16,
+      "fab": "23/09/26",
+      "val": "18/10/26",
+      "emoji": "Agua de coco",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 18,
+      "nome": "Atum ralado Gomes da Costa",
+      "categoria": "mercearia",
+      "preco": 5.5,
+      "estoque": 24,
+      "fab": "10/09/26",
+      "val": "27/11/26",
+      "emoji": "Atum",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 19,
+      "nome": "Farinha de trigo Finna 1kg",
+      "categoria": "mercearia",
+      "preco": 3.89,
+      "estoque": 30,
+      "fab": "30/07/26",
+      "val": "26/01/27",
+      "emoji": "Farinha",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 20,
+      "nome": "Feijao carioca 1kg Kicaldo",
+      "categoria": "mercearia",
+      "preco": 4.9,
+      "estoque": 40,
+      "fab": "18/09/26",
+      "val": "27/03/27",
+      "emoji": "Feijao",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 21,
+      "nome": "Oleo de soja Soya 1L",
+      "categoria": "mercearia",
+      "preco": 4,
+      "estoque": 40,
+      "fab": "13/09/26",
+      "val": "16/04/27",
+      "emoji": "Oleo",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 22,
+      "nome": "Arroz branco 1kg Camil",
+      "categoria": "mercearia",
+      "preco": 6,
+      "estoque": 40,
+      "fab": "18/09/26",
+      "val": "16/04/27",
+      "emoji": "Arroz",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 23,
+      "nome": "Macarrao espaguete 500g",
+      "categoria": "mercearia",
+      "preco": 3.2,
+      "estoque": 35,
+      "fab": "08/09/26",
+      "val": "25/02/27",
+      "emoji": "Macarrao",
+      "ativo": true,
+      "parceiro_id": null
+    },
+    {
+      "id": 24,
+      "nome": "Molho de tomate 340g",
+      "categoria": "mercearia",
+      "preco": 2.8,
+      "estoque": 28,
+      "fab": "03/09/26",
+      "val": "26/01/27",
+      "emoji": "Molho de tomate",
+      "ativo": true,
+      "parceiro_id": null
+    }
+  ],
+  "orders": [],
+  "messages": []
+}

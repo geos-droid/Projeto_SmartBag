@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Bag | Do desperdicio a sacola inteligente</title>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+ <a href="#home"><img src="/img/logo-.png" alt="Smart Bag"></a>
+ <button id="burger" aria-label="Abrir menu">☰</button>
+ <nav id="menu">
+  <a href="#home">Home</a><a href="#sobre">Quem Somos</a><a href="#parceiro">Seja Parceiro</a><a href="#receitas">Receitas e Dicas</a>
+  <button id="temaBtn" class="tema" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema">🌙</button>
+  <a class="login" href="login.html" id="contaLink">Minha Conta</a>
+ </nav>
+</header>
+
+<section id="home">
+ <h1>SMARTBAG</h1>
+ <h3>DO DESPERDICIO A SACOLA INTELIGENTE</h3>
+ <p>Transforme o desperdicio em economia! Com a Smart Bag, voce garante produtos de qualidade com descontos imperdiveis nos mercados de Candeias-BA, ajuda a proteger o planeta e economiza de verdade.</p>
+ <a class="btn" href="dashboard.html">Ver todas as ofertas</a>
+</section>
+
+<section id="sobre">
+ <h2>Quem Somos</h2>
+ <p class="sub">A Smart Bag nasceu na Escola SESI, em Candeias-BA, para ligar supermercados locais a quem quer economizar sem abrir mao da qualidade.</p>
+ <div class="grid">
+  <div class="card"><div class="ico">$</div><h4>Economia real no bolso</h4><p>Produtos com validade vigente e grandes descontos.</p></div>
+  <div class="card"><div class="ico">+</div><h4>Combate direto ao desperdicio</h4><p>Menos lixo e menos emissao de gases.</p></div>
+  <div class="card"><div class="ico">#</div><h4>Praticidade e seguranca</h4><p>Conexao entre os supermercados locais e a mesa do consumidor.</p></div>
+ </div>
+</section>
+
+<section id="parceiro">
+ <h2>Seja Parceiro</h2>
+ <p class="sub">Supermercados e comercios de Candeias-BA podem se cadastrar na plataforma para vender automaticamente o estoque com validade proxima e converter perdas em receita.</p>
+ <div class="grid">
+  <div class="card"><div class="ico">01</div><h4>Crie o mercado</h4><p>Cadastre o nome, localização e identidade da sua loja. A unidade recebe um ID automaticamente.</p></div>
+  <div class="card"><div class="ico">02</div><h4>Publique seus produtos</h4><p>Cadastre estoque, preço e validade. Os produtos ficam vinculados somente ao seu mercado.</p></div>
+  <div class="card"><div class="ico">03</div><h4>Receba compradores</h4><p>O consumidor escolhe sua loja dentro da Smart Bag e compra somente os itens daquela unidade.</p></div>
+ </div>
+ <a class="btn" href="#contato">Quero ser parceiro</a>
+</section>
+
+<section id="receitas">
+ <h2>Receitas e Dicas</h2>
+ <p class="sub">Aproveite os alimentos por inteiro e faca a comida durar mais.</p>
+ <div class="grid">
+  <div class="card receita"><div class="foto"><img src="https://i2.wp.com/s2.glbimg.com/-kp5aJQjf1kqwBOlWgwaLsrvqg8=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_1f540e0b94d8437dbbc39d567a1dee68/internal_photos/bs/2022/S/g/htV48vSjyZQH34ndV7aQ/maxresdefault.jpg" alt="Empadão de frango" loading="lazy"></div><div><h4>Empadão de frango</h4><p>Massa caseira, frango e queijo. Na página de receitas você pode adicionar os ingredientes diretamente ao carrinho.</p><a class="btn" href="dashboard.html#receitas">Ver receita e comprar</a></div></div>
+  <div class="card receita"><div class="foto"><img src="https://img.elnueve.com.ar/sites/default/files/styles/2_1_max_1024px/public/2025-06/WhatsApp%20Image%202025-06-05%20at%2015.19.57%20%281%29.jpeg?h=a92f03cd&itok=EKngenTp" alt="Arroz cremoso de frango" loading="lazy"></div><div><h4>Arroz cremoso de frango</h4><p>Uma receita prática usando arroz, frango, molho de tomate e queijo.</p><a class="btn" href="dashboard.html#receitas">Ver receita e comprar</a></div></div>
+  <div class="card receita"><div class="foto"><img src="https://www.guiadasemana.com.br/contentFiles/image/2017/05/FEA/principal/51266_w840h0_1493907179espaguete.jpg" alt="Macarrão com carne e molho" loading="lazy"></div><div><h4>Macarrão com carne e molho</h4><p>Uma opção rápida com itens da mercearia e do açougue.</p><a class="btn" href="dashboard.html#receitas">Ver receita e comprar</a></div></div>
+ </div>
+</section>
+
+<section id="contato">
+ <h2>Fale Conosco</h2>
+ <p class="sub">Duvidas, cadastro de parceiros ou contato geral.</p>
+ <p class="sub" style="margin-top:-16px;font-size:.85rem">Já é parceiro? <a class="link-inline" href="login.html">Acesse o painel de gestão de estoque</a>.</p>
+ <form id="form" novalidate>
+  <label for="assunto">Assunto</label>
+  <select id="assunto"><option>Duvida</option><option>Cadastro de parceiro</option><option>Contato geral</option></select>
+  <label for="nome">Nome</label><input id="nome" autocomplete="name"><div class="erro" data-for="nome"></div>
+  <label for="email">E-mail</label><input id="email" type="email" autocomplete="email"><div class="erro" data-for="email"></div>
+  <label for="msg">Mensagem</label><textarea id="msg" rows="4"></textarea><div class="erro" data-for="msg"></div>
+  <button class="btn" type="submit">Enviar mensagem</button>
+  <div class="ok" id="ok" role="status"></div>
+ </form>
+</section>
+<footer>&copy; 2026 Smart Bag · Candeias-BA</footer>
+<script src="session.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

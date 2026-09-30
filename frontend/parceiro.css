@@ -1,0 +1,77 @@
+/* Painel do parceiro — agora usa as mesmas variáveis de tema do resto do site
+   (antes era um visual escuro fixo que ignorava o botão de alternância). */
+[hidden]{display:none!important}
+:root{--laranja:#FF9644;--claro:#FFCE99;--creme:#FFFDF1;--texto:#562F00;--cta:#FA7006;--card-bg:#fff}
+html[data-tema="escuro"]{--claro:#3a2a18;--creme:#1b140d;--texto:#f5ead9;--card-bg:#241a10}
+*{box-sizing:border-box}
+body{margin:0;font-family:Jost,Arial,sans-serif;color:var(--texto);background:var(--creme);min-height:100vh}
+html[data-tema="escuro"] body{background:#150e08}
+button,input{font:inherit}
+
+.topo{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:16px;padding:12px max(5%,calc((100% - 1180px)/2));background:var(--laranja);color:#fff;border-bottom:1px solid rgba(0,0,0,.08)}
+.topo img{height:42px;border-radius:8px}
+.topo h1{font-size:1.15rem;flex:1;margin:0}
+.tema{background:rgba(255,255,255,.25);color:#fff;border:0;border-radius:50%;width:38px;height:38px;cursor:pointer}
+.tema:hover{background:rgba(255,255,255,.4)}
+.topo .link{color:#fff;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,.5);padding:8px 14px;border-radius:12px;background:rgba(255,255,255,.15)}
+.topo .link:hover{background:rgba(255,255,255,.28)}
+
+main{max-width:1180px;margin:0 auto;padding:28px 5% 70px;display:grid;gap:20px}
+
+.identidade-loja{display:grid;grid-template-columns:1fr 1.2fr;gap:22px;padding:22px;border:1px solid var(--claro);border-radius:22px;background:var(--card-bg);box-shadow:0 12px 30px rgba(86,47,0,.08)}
+.identidade-principal{display:flex;align-items:center;gap:16px}
+.avatar-loja{width:72px;height:72px;border-radius:18px;display:grid;place-items:center;background:var(--claro);border:1px solid var(--claro);overflow:hidden;flex:none}
+.avatar-loja img{width:100%;height:100%;object-fit:contain}
+.eyebrow{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--cta);font-weight:800}
+.identidade-principal h2{margin:2px 0;font-size:1.7rem}
+.identidade-principal p{margin:0;color:var(--texto);opacity:.7}
+.form-mercado{display:grid;grid-template-columns:1fr 1fr;gap:12px;background:none;padding:0;box-shadow:none;max-width:none}
+.form-mercado .campo:last-of-type{grid-column:1/-1}
+.campo{margin:0}
+.campo label{display:block;font-weight:700;font-size:.82rem;margin-bottom:5px}
+.campo input{width:100%;height:44px;border:2px solid var(--claro);border-radius:10px;padding:0 12px;background:var(--creme);color:var(--texto);outline:none}
+.campo input:focus{border-color:var(--laranja);box-shadow:0 0 0 3px rgba(255,150,68,.2)}
+.identidade-actions{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--texto);opacity:.75;font-size:.8rem}
+
+.btn{background:var(--cta);color:#fff;border:0;border-radius:11px;padding:10px 16px;font-weight:800;cursor:pointer}
+.btn:hover{background:var(--laranja)}
+.btn.sec{background:transparent;border:2px solid var(--claro);color:var(--texto)}
+.btn.sec:hover{background:var(--claro)}
+.msg{min-height:1.2em;margin:4px 0 0;font-weight:700}
+.msg.ok{color:#1b5e20}
+.msg.erro{color:#b3261e}
+
+.resumo{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cartaoResumo{background:var(--card-bg);border:1px solid var(--claro);border-radius:18px;padding:16px 18px;color:var(--texto);opacity:.9;box-shadow:0 8px 20px rgba(86,47,0,.06)}
+.cartaoResumo b{display:block;color:var(--cta);font-size:1.8rem;margin-top:3px;opacity:1}
+
+.painel{background:var(--card-bg);border:1px solid var(--claro);border-radius:22px;padding:22px;box-shadow:0 12px 30px rgba(86,47,0,.08)}
+.painel h2{margin:0 0 16px;font-size:1.25rem}
+.linha{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.painel form{max-width:none;background:none;padding:0;box-shadow:none}
+.painel input{width:100%;height:44px;border:2px solid var(--claro);border-radius:10px;background:var(--creme);color:var(--texto);padding:0 12px}
+.painel input:focus{outline:none;border-color:var(--laranja)}
+.acoes{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+
+.linhaProd{display:grid;grid-template-columns:1fr auto auto auto;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--claro)}
+.linhaProd .info b{display:block}
+.linhaProd .info small{color:var(--texto);opacity:.7}
+.tagCat,.tagVencido{border-radius:999px;padding:4px 9px;font-size:.72rem}
+.tagCat{background:var(--claro);color:var(--texto)}
+.tagVencido{background:#f8d7d3;color:#8a1c14}
+.linhaProd .acoesProd{display:flex;gap:7px}
+.linhaProd button{border-radius:9px;padding:7px 12px;font-size:.82rem;border:2px solid var(--claro);background:none;color:var(--texto)}
+.linhaProd button:hover{background:var(--claro)}
+.linhaProd button.excluir{border-color:#b3261e;color:#b3261e}
+.linhaProd button.excluir:hover{background:#b3261e;color:#fff}
+.vazio{padding:18px 0;text-align:center;color:var(--texto);opacity:.7}
+
+@media(max-width:800px){
+ .identidade-loja{grid-template-columns:1fr}
+ .resumo{grid-template-columns:1fr}
+ .form-mercado{grid-template-columns:1fr}
+ .form-mercado .campo:last-of-type{grid-column:auto}
+ .identidade-actions{grid-column:auto}
+ .linhaProd{grid-template-columns:1fr}
+ .linha{grid-template-columns:1fr}
+}

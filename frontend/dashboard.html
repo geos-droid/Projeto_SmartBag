@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Bag | Produtos e Receitas</title>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+<aside id="sidebar">
+ <a class="logo-link" href="index.html"><img src="/img/logo-l.png" alt="Smart Bag"></a>
+ <div class="sidebar-title">Categorias</div>
+ <nav class="categorias-menu" aria-label="Categorias de produtos">
+  <button type="button" class="categoria-tab ativo" data-cat=""><span class="cat-icone">🛒</span><span>Todos os produtos</span><span class="cat-seta">›</span></button>
+  <button type="button" class="categoria-tab" data-cat="padaria"><span class="cat-icone">🥖</span><span>Padaria</span><span class="cat-seta">›</span></button>
+  <button type="button" class="categoria-tab" data-cat="acougue"><span class="cat-icone">🥩</span><span>Açougue</span><span class="cat-seta">›</span></button>
+  <button type="button" class="categoria-tab" data-cat="frios"><span class="cat-icone">🧀</span><span>Frios e laticínios</span><span class="cat-seta">›</span></button>
+  <button type="button" class="categoria-tab" data-cat="bebidas"><span class="cat-icone">🥤</span><span>Bebidas</span><span class="cat-seta">›</span></button>
+  <button type="button" class="categoria-tab" data-cat="mercearia"><span class="cat-icone">🛍️</span><span>Mercearia</span><span class="cat-seta">›</span></button>
+  <button type="button" class="categoria-tab receitas-tab" id="abrirReceitasMenu"><span class="cat-icone">🍲</span><span>Receitas</span><span class="cat-seta">›</span></button>
+ </nav>
+ <div class="destaque">
+  <div><b>Receitas com sua compra</b>Escolha um prato e adicione os ingredientes diretamente ao carrinho.</div>
+  <div class="mini">✨</div>
+ </div>
+</aside>
+
+<main>
+ <div class="topo">
+  <div class="loja-atual" id="lojaAtual"><span class="loja-logo-wrap"><img id="lojaLogo" src="/img/logo-.png" alt=""></span><span><strong id="lojaNome">Smart Bag</strong><small id="lojaMeta">Comprando na loja oficial</small></span></div>
+  <label class="seletor-loja" for="lojaSelect"><span>Loja</span><select id="lojaSelect" aria-label="Selecionar loja"></select></label>
+  <button id="menuBtn" aria-label="Abrir menu">☰</button>
+  <input class="busca" id="busca" type="search" placeholder="Pesquisar produtos" aria-label="Pesquisar produtos">
+  <select id="categoria" aria-label="Filtrar por categoria"><option value="">Todas as categorias</option></select>
+  <button id="temaBtn" class="tema" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema">🌙</button>
+  <button class="link" id="abrirPedidos">Meus pedidos</button>
+  <button class="link" id="abrirCarrinho">Carrinho (<span id="contador">0</span>)</button>
+  <a class="link" id="contaBtn" href="login.html">Minha Conta</a>
+  <button class="link" id="sairBtn" hidden>Sair</button>
+ </div>
+ <div class="vitrine" id="vitrine"></div>
+ <section class="receitas-view" id="receitasView" hidden>
+   <div class="receitas-cabecalho">
+    <div>
+      <span class="eyebrow">Cozinhe e compre</span>
+      <h1>Receitas</h1>
+      <p>Receitas simples usando produtos disponíveis na Smart Bag. Adicione cada ingrediente ou coloque todos de uma vez no carrinho.</p>
+    </div>
+    <button class="sec" id="voltarProdutos" type="button">← Ver produtos</button>
+   </div>
+   <div class="receitas-grid" id="receitasGrid"></div>
+ </section>
+</main>
+
+<div id="modal" role="dialog" aria-modal="true" aria-labelledby="tituloCarrinho">
+ <div class="caixa">
+  <h2 id="tituloCarrinho">Carrinho (0)</h2>
+  <label class="check-all"><input type="checkbox" id="todos" checked> Selecionar tudo</label>
+  <div id="itens"></div>
+
+  <h3>Forma de pagamento</h3>
+  <div class="opcoes" data-grupo="pgto">
+   <label class="opcao sel"><input type="radio" name="pgto" value="pix" checked> Pix</label>
+   <label class="opcao"><input type="radio" name="pgto" value="debito"> Cartão de débito</label>
+   <label class="opcao"><input type="radio" name="pgto" value="credito"> Cartão de crédito</label>
+  </div>
+
+  <h3>Opções de entrega</h3>
+  <div class="opcoes" data-grupo="entrega">
+   <label class="opcao sel"><input type="radio" name="entrega" value="retirada" checked> Retirada</label>
+   <label class="opcao"><input type="radio" name="entrega" value="delivery"> Delivery</label>
+  </div>
+
+  <div class="endereco-box" id="enderecoBox" hidden>
+   <h3>Endereço de entrega</h3>
+   <div class="endereco-grid">
+    <label class="cep-field">CEP
+      <div class="cep-row"><input id="cep" inputmode="numeric" maxlength="9" placeholder="00000-000" autocomplete="postal-code"><button class="cep-btn" id="buscarCep" type="button">Buscar CEP</button></div>
+      <small id="cepMsg" class="campo-msg"></small>
+    </label>
+    <label class="logradouro-field">Rua / logradouro<input id="logradouro" autocomplete="street-address" placeholder="Rua, avenida..."></label>
+    <label>Número<input id="numero" inputmode="numeric" autocomplete="address-line2" placeholder="Nº"></label>
+    <label>Complemento<input id="complemento" placeholder="Apartamento, casa..."></label>
+    <label>Bairro<input id="bairro" autocomplete="address-level3"></label>
+    <label>Cidade / UF<input id="cidadeUf" autocomplete="address-level2"></label>
+   </div>
+   <label class="instr-label">Instruções de entrega (opcional)<textarea id="instrucoes" rows="2" maxlength="250" placeholder="Ex.: deixar na portaria"></textarea></label>
+  </div>
+
+  <div class="rodape">
+   <span class="total">Total: <span id="total">R$ 0,00</span></span>
+   <span><button class="sec" id="voltar">Voltar</button> <button class="prim" id="finalizar">Finalizar compra</button></span>
+  </div>
+ </div>
+</div>
+<div id="modalPedidos" role="dialog" aria-modal="true" aria-labelledby="tituloPedidos">
+ <div class="caixa">
+  <h2 id="tituloPedidos">Meus pedidos</h2>
+  <div id="listaPedidos"></div>
+  <div class="rodape" style="justify-content:flex-end">
+   <button class="sec" id="fecharPedidos">Fechar</button>
+  </div>
+ </div>
+</div>
+<div id="toast" role="status"></div>
+<script src="session.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>

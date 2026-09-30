@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Bag | Minha conta</title>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+<a class="voltar" href="index.html">&larr; Voltar ao site</a>
+<button id="temaBtn" class="tema" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema">🌙</button>
+<div class="main">
+ <input type="checkbox" id="chk" aria-hidden="true" checked>
+
+ <div class="signup">
+  <form id="formCadastro">
+   <label for="chk" aria-hidden="true">Cadastrar</label>
+   <input type="text" name="nome" placeholder="Nome de usuario" required autocomplete="name">
+   <input type="email" name="email" placeholder="E-mail" required autocomplete="email">
+   <input type="tel" name="telefone" placeholder="Telefone com DDD" required autocomplete="tel">
+   <input type="password" name="senha" placeholder="Senha (min. 6 caracteres)" required autocomplete="new-password">
+   <div class="tipoConta" role="radiogroup" aria-label="Tipo de conta">
+    <label><input type="radio" name="tipo" value="consumidor" checked> Sou consumidor</label>
+    <label><input type="radio" name="tipo" value="parceiro"> Sou um mercado parceiro</label>
+   </div>
+   <div class="dadosMercado" id="dadosMercado" hidden>
+    <div class="secao-form">Dados do mercado</div>
+    <input type="text" name="mercado_nome" placeholder="Nome do mercado" autocomplete="organization">
+    <input type="text" name="mercado_local" placeholder="Localização / bairro" autocomplete="address-level2">
+    <input type="url" name="mercado_logo" placeholder="Logo (URL, opcional)">
+    <div class="unidade-auto">ID da unidade <strong>gerado automaticamente</strong></div>
+   </div>
+   <button>Criar conta</button>
+   <p class="msg" id="msgCadastro" role="alert"></p>
+  </form>
+ </div>
+
+ <div class="login">
+  <form id="formLogin">
+   <label for="chk" aria-hidden="true">Entrar</label>
+   <input type="email" name="email" placeholder="E-mail" required autocomplete="email">
+   <input type="password" name="senha" placeholder="Senha" required autocomplete="current-password">
+   <button>Entrar</button>
+   <p class="msg" id="msgLogin" role="alert"></p>
+   <label for="chk" class="troca">Ainda nao tem conta? Cadastre-se</label>
+  </form>
+ </div>
+</div>
+<script src="session.js"></script>
+<script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Bag | Minha conta</title>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="conta.css">
+</head>
+<body>
+<header class="topoConta">
+ <a href="dashboard.html">&larr; Voltar à loja</a>
+ <button id="temaBtn" class="tema" type="button" aria-label="Alternar tema claro/escuro" title="Alternar tema">🌙</button>
+</header>
+<main class="cartao">
+ <h1>Minha conta</h1>
+ <p class="sub" id="tipoConta"></p>
+
+ <form id="formPerfil">
+  <label for="nome">Nome</label>
+  <input id="nome" name="nome" required minlength="3">
+  <label for="email">E-mail</label>
+  <input id="email" name="email" disabled>
+  <label for="telefone">Telefone</label>
+  <input id="telefone" name="telefone" required>
+  <button class="btn" type="submit">Salvar alterações</button>
+  <p class="msg" id="msgPerfil" role="status"></p>
+ </form>
+
+ <div class="zonaPerigo">
+  <h2>Excluir conta</h2>
+  <p>Isso remove seu cadastro e encerra a sessão. Não afeta pedidos já registrados.</p>
+  <button id="btnExcluir" class="perigo">Excluir minha conta</button>
+ </div>
+
+ <button id="btnSair" class="sair">Sair da conta</button>
+</main>
+<script src="session.js"></script>
+<script src="conta.js"></script>
+</body>
+</html>

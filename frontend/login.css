@@ -1,0 +1,60 @@
+/* Tela de login/cadastro — visual original (cartão laranja com o "Entrar" surgindo por baixo),
+   agora usando as mesmas variáveis de tema do resto do site (funciona no claro e no escuro). */
+*{box-sizing:border-box}
+:root{--laranja:#FF9644;--claro:#FFCE99;--creme:#FFFDF1;--texto:#562F00;--cta:#FA7006}
+html[data-tema="escuro"]{--claro:#3a2a18;--creme:#1b140d;--texto:#f5ead9}
+html,body{margin:0;min-height:100%}
+body{font-family:'Jost',sans-serif;background:var(--creme);min-height:100vh;display:flex;justify-content:center;align-items:flex-start;padding:76px 16px 40px}
+html[data-tema="escuro"] body{background:#150e08}
+
+.voltar{position:fixed;top:18px;left:22px;color:var(--texto);text-decoration:none;font-weight:700}
+.voltar:hover{text-decoration:underline}
+.tema{position:fixed;top:14px;right:20px;background:#fff;border:2px solid var(--claro);border-radius:50%;width:38px;height:38px;font-size:1.05rem;cursor:pointer;box-shadow:0 4px 14px rgba(86,47,0,.15)}
+html[data-tema="escuro"] .tema{background:#241a10}
+
+/* Cartão: o gradiente laranja é a base; o "Entrar" é um painel creme que sobe por cima */
+.main{position:relative;width:min(380px,100%);border-radius:26px;overflow:hidden;background:linear-gradient(160deg,var(--laranja),var(--cta));box-shadow:0 24px 60px rgba(86,47,0,.35)}
+#chk{display:none}
+
+.signup{position:relative;padding:34px 30px 30px;transition:opacity .25s, transform .35s ease-in-out}
+#chk:checked ~ .signup{opacity:0;transform:translateY(-8px);pointer-events:none}
+
+.login{position:absolute;inset:0;overflow-y:auto;padding:36px 30px 30px;background:var(--claro);border-radius:34px 34px 0 0;transform:translateY(105%);transition:transform .5s ease-in-out}
+#chk:checked ~ .login{transform:translateY(0)}
+
+label[for="chk"]{color:#fff;font-size:2.1em;display:block;text-align:center;margin:0 0 22px;font-weight:800;cursor:pointer}
+.login label[for="chk"]{color:var(--texto)}
+
+input{width:100%;height:44px;margin:9px 0;padding:0 14px;border:0;outline:none;border-radius:10px;font:inherit;color:var(--texto);background:var(--creme)}
+input::placeholder{color:#9a8368}
+input:focus{box-shadow:0 0 0 3px rgba(255,150,68,.35)}
+
+/* Cor fixa (não muda com o tema) para manter contraste com o texto branco do botão */
+button{width:100%;height:44px;margin-top:16px;color:#fff;background:#3d2100;font:800 1rem 'Jost',sans-serif;border:0;border-radius:12px;cursor:pointer;transition:.18s}
+button:hover{background:#2a1600;transform:translateY(-1px)}
+.login button{background:var(--cta)}
+.login button:hover{background:var(--laranja)}
+
+.msg{min-height:1.3em;margin:12px 0 0;text-align:center;font-size:.88em;font-weight:700;color:#fff2e0}
+.msg.ok{color:#eaffea}
+.login .msg{color:#8a1c14}
+.login .msg.ok{color:#1b5e20}
+label.troca{display:block;font-size:.92rem;margin:18px 0 0;text-decoration:underline;font-weight:600;text-align:center;cursor:pointer;color:var(--texto)}
+
+/* Tipo de conta (consumidor / parceiro) */
+.tipoConta{display:flex;flex-direction:column;gap:9px;margin:16px 0 6px;color:#fff;font-size:.9rem}
+.tipoConta label{display:flex;align-items:center;gap:8px;font-weight:600;cursor:pointer}
+.tipoConta input{all:revert;width:18px;height:18px;margin:0;accent-color:#fff}
+
+/* Dados do mercado (aparece só quando "Sou um mercado parceiro" está marcado) */
+.dadosMercado{margin-top:14px;padding:16px;border:1px solid rgba(255,255,255,.4);border-radius:16px;background:rgba(255,255,255,.12)}
+.dadosMercado[hidden]{display:none}
+.secao-form{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:#fff;font-weight:800;margin-bottom:8px;opacity:.9}
+.unidade-auto{margin-top:6px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.15);border:1px dashed rgba(255,255,255,.45);color:#fff;font-size:.78rem}
+.unidade-auto strong{color:#fff}
+
+@media(max-width:480px){
+ body{padding-top:64px}
+ .signup{padding:28px 22px 26px}
+ .login{padding:30px 22px 26px}
+}

@@ -1,0 +1,19 @@
+{
+  "name": "smartbag",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Smart Bag — do desperdício à sacola inteligente",
+  "scripts": {
+    "backend": "node backend/src/server.js",
+    "frontend": "vite --host --port 5173",
+    "dev": "concurrently -k \"npm run backend\" \"npm run frontend\"",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "vite": "^6.3.5"
+  }
+}
