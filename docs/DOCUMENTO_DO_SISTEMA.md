@@ -3,28 +3,35 @@
 ## Capa
 
 - **Sistema:** Smart Bag — Do desperdício à sacola inteligente
-- **Equipe:** *Ana Caroline, Geovana, Larissa, Paulo Aldo e Yasmin*
+- **Equipe:** *(preencher com os nomes completos dos integrantes)*
 - **Instituição:** SENAI Candeias
 - **Professor orientador:** Adalberto Santana
 - **Versão:** v1.0 — versão final para apresentação
 
 ## Integrantes da equipe
 
-*Ana Caroline, Geovana, Larissa, Paulo Aldo e Yasmim*
+> *(preencher)*
+
+| Nome | Função no projeto |
+|---|---|
+| Integrante 1 | |
+| Integrante 2 | |
+| Integrante 3 | |
 
 ## Descrição do projeto
 
-O Smart Bag é uma plataforma web criada para aproximar mercados e comércios locais de consumidores interessados em produtos com validade próxima e preços reduzidos. O sistema reúne área institucional, vitrine de produtos, carrinho e checkout, histórico de pedidos, conta do consumidor e painel de parceiro para gerenciamento do estoque.
-
-A proposta é transformar produtos que poderiam ser descartados em oportunidades de venda. O sistema também possui receitas e dicas de aproveitamento relacionadas aos produtos disponíveis.
+Smart Bag é uma plataforma web que conecta supermercados e comércios locais de Candeias-BA a consumidores, dando visibilidade a produtos com validade próxima e vendendo-os com desconto antes que virem perda. O sistema tem três frentes que conversam entre si: uma landing page institucional, uma loja onde o consumidor compra, e um painel onde o parceiro (mercado) gerencia o próprio estoque.
 
 ## Problema identificado
 
-O problema central é o desperdício de alimentos causado pela perda de prazos de validade e por falhas de gestão e armazenamento nos mercados de Candeias-BA. O documento-base destaca a ausência de práticas como PEPS (Primeiro a Entrar, Primeiro a Sair) como um fator relacionado à perda de produtos por vencimento. 
+Supermercados descartam regularmente produtos ainda próprios para consumo apenas porque estão perto da validade, gerando prejuízo financeiro para o comércio e desperdício de alimentos que poderiam ser aproveitados. Ao mesmo tempo, consumidores que buscam economizar não têm um canal simples para encontrar esses produtos com desconto.
 
 ## Objetivo da solução
 
-Combater o desperdício de alimentos em mercados. O objetivo específico é implementar o Smart Bag como plataforma para dar visibilidade e facilitar a venda de produtos próximos ao vencimento, permitindo que os estabelecimentos convertam parte das perdas em receita e que consumidores encontrem alimentos por preços mais acessíveis. 
+Oferecer um marketplace local e simples de operar, onde:
+- o parceiro cadastra rapidamente os itens perto do vencimento, com preço reduzido;
+- o consumidor encontra, compra e retira ou recebe esses produtos;
+- o desperdício vira faturamento em vez de prejuízo.
 
 ## Público-alvo
 
@@ -33,9 +40,7 @@ Combater o desperdício de alimentos em mercados. O objetivo específico é impl
 
 ## Justificativa do projeto
 
-O projeto se justifica pela necessidade de enfrentar o desperdício de alimentos e seus impactos econômicos, sociais e ambientais. O Smart Bag propõe uma alternativa tecnológica para dar saída a produtos próximos da validade, transformando possíveis perdas em vendas e ampliando o acesso do consumidor a produtos por preços mais acessíveis.
-
-A proposta também inclui receitas e dicas de aproveitamento para facilitar a compra e conscientizar os usuários sobre o combate ao desperdício.
+O desperdício de alimentos é um problema ambiental e econômico. Uma solução tecnológica simples, pensada para o comércio local, ajuda a fortalecer a economia da cidade, reduz o volume de lixo orgânico e amplia o acesso a alimentos de qualidade a preços menores — um ganho para os três lados: mercado, consumidor e meio ambiente.
 
 ## Tecnologias utilizadas
 

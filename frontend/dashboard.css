@@ -177,3 +177,45 @@ body.modo-receitas .receitas-cabecalho{padding-bottom:4px}
 }
 /* Marketplace de lojas */
 .loja-atual{display:flex;align-items:center;gap:10px;min-width:240px;padding:7px 10px;border:1px solid var(--claro);border-radius:14px;background:var(--creme)}.loja-logo-wrap{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--claro);overflow:hidden;flex:none}.loja-logo-wrap img{width:100%;height:100%;object-fit:contain}.loja-atual strong{display:block;font-size:.86rem}.loja-atual small{display:block;font-size:.68rem;color:#9b826b;line-height:1.2}.seletor-loja{display:flex;flex-direction:column;gap:2px;font-size:.62rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:#a47d59;min-width:180px}.seletor-loja select{width:100%;height:38px;border:1px solid var(--claro);border-radius:10px;padding:0 10px;background:var(--creme);color:var(--texto);font:600 .82rem Jost,sans-serif}html[data-tema="escuro"] .loja-atual,html[data-tema="escuro"] .seletor-loja select{background:#1e1e1e;border-color:#49331e;color:#f5ead9}html[data-tema="escuro"] aside{background:#17120e;border-color:#3d2a19}html[data-tema="escuro"] .categoria-tab{color:#f5ead9}html[data-tema="escuro"] .categoria-tab:hover,html[data-tema="escuro"] .categoria-tab.ativo{background:#241a10;border-color:#5a3c20}html[data-tema="escuro"] .destaque{background:#1e1813;border-color:#49331e}html[data-tema="escuro"] .topo{background:#15110d;border-color:#49331e}html[data-tema="escuro"] .busca{color:#f5ead9}html[data-tema="escuro"] .receita-card,html[data-tema="escuro"] .produto{background:#1e1e1e;border:1px solid #3c2c1d}html[data-tema="escuro"] .ingrediente{background:#211913;border-color:#49331e}html[data-tema="escuro"] .receitas-cabecalho p,html[data-tema="escuro"] .ingrediente small{color:#c4b09d}html[data-tema="escuro"] .caixa{background:#1e1e1e;color:#f5ead9}html[data-tema="escuro"] .sec{background:#21170f;color:#ffd09e;border-color:#6a4926}.pedido-loja{font-size:.78rem;color:#c8b7a5;margin:4px 0 8px}@media(max-width:1100px){.loja-atual{min-width:190px}.seletor-loja{min-width:160px}.topo{gap:10px}}@media(max-width:800px){.loja-atual{flex:1;min-width:0}.seletor-loja{order:4;min-width:100%}.topo .busca{order:5;flex:1}.topo #temaBtn{order:3}.topo .link{order:6}}
+
+/* Pagamento com cartão */
+.cartao-box{margin-top:14px;padding:16px;border:1px solid #efd0a8;border-radius:16px;background:#fffaf3}
+.cartao-cabecalho{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:12px}
+.cartao-cabecalho h3{margin:0}
+.cartao-cabecalho small{color:#8a6a4c;font-size:.72rem}
+.cartao-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cartao-grid label{display:flex;flex-direction:column;gap:5px;font-size:.82rem;font-weight:700;color:#684622}
+.cartao-grid input,.cartao-grid select{width:100%;border:1.5px solid #e6c69f;border-radius:11px;padding:10px 11px;background:#fff;color:var(--texto);font:inherit;min-height:42px;box-sizing:border-box}
+.cartao-numero{grid-column:1/-1}
+.frete-resumo{margin-top:14px;border-top:1px dashed #e2bd8c;padding-top:12px;display:grid;gap:7px}
+.frete-resumo>div{display:flex;justify-content:space-between;gap:12px}
+.frete-resumo .frete-linha strong{color:#FA7006}
+.frete-resumo small{color:#6e5137;font-size:.76rem}
+@media(max-width:700px){
+ .cartao-grid{grid-template-columns:1fr}
+ .cartao-numero{grid-column:auto}
+ .cartao-cabecalho{flex-direction:column;gap:4px}
+}
+
+
+/* Acessibilidade dos dados de cartão: contraste explícito em ambos os temas */
+.cartao-box{color:#3f2a18}
+.cartao-cabecalho h3{color:#3f2a18}
+.cartao-cabecalho small{color:#604a35}
+.cartao-grid label{color:#3f2a18}
+.cartao-grid input,.cartao-grid select{color:#24170d;background:#fff;border-color:#b98b5c}
+.cartao-grid input::placeholder{color:#6f6256;opacity:1}
+.cartao-grid input:focus,.cartao-grid select:focus{outline:3px solid rgba(250,112,6,.28);outline-offset:1px;border-color:#c85a00}
+html[data-tema="escuro"] .cartao-box{background:#1c1510;border-color:#765638;color:#f8ead8}
+html[data-tema="escuro"] .cartao-cabecalho h3,html[data-tema="escuro"] .cartao-grid label{color:#fff7ed}
+html[data-tema="escuro"] .cartao-cabecalho small{color:#e2cfba}
+html[data-tema="escuro"] .cartao-grid input,html[data-tema="escuro"] .cartao-grid select{background:#fff;color:#24170d;border-color:#d0a878}
+html[data-tema="escuro"] .cartao-grid input::placeholder{color:#6b625a}
+html[data-tema="escuro"] .frete-resumo{border-color:#765638}
+html[data-tema="escuro"] .frete-resumo small{color:#e0cbb5}
+
+/* Cards de produtos: proporção uniforme e fotos sem distorção */
+.produto .img{height:190px;aspect-ratio:4/3;display:block;overflow:hidden;border-radius:16px;background:#f4eadf}
+.produto .img img{width:100%;height:100%;display:block;object-fit:contain;object-position:center;transition:transform .25s ease;background:#fff}
+.produto:hover .img img{transform:scale(1.03)}
+@media(max-width:700px){.produto .img{height:180px}}

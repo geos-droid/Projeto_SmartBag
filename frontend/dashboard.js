@@ -7,47 +7,27 @@ let categoriasCarregadas = false;
 let lojas = [];
 let lojaSelecionada = null;
 const LOJA_CHAVE = 'sb_loja_selecionada';
+let freteAtual = 0;
 
-const IMAGENS = {
-  padaria: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&fm=webp&q=85&w=900',
-  acougue: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&fm=webp&q=85&w=900',
-  frios: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&fm=webp&q=85&w=900',
-  bebidas: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&fm=webp&q=85&w=900',
-  mercearia: 'https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?auto=format&fit=crop&fm=webp&q=85&w=900'
-};
+const FRETES_CENTRAL = new Set([
+  'areia','santo antonio','urbis ii','centro','nova candeias','triangulo','malemba'
+]);
+const FRETES_12 = new Set([
+  'sarandy','distrito industrial','urbis i','nova brasilia','pitanga','area rural de candeias'
+]);
 
-const IMAGENS_PRODUTOS = {
-  'Pao integral Pullman': 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&fm=webp&q=85&w=900',
-  'Pao frances (kg)': 'https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&fm=webp&q=85&w=900',
-  'Bolo de fuba caseiro': 'https://www.cozinhaaz.com/wp-content/uploads/2020/01/bolo-de-fuba-2.jpg',
-  'Torrada Bauducco': 'https://images.unsplash.com/photo-1598373182133-52452f7691ef?auto=format&fit=crop&fm=webp&q=85&w=900',
-  'Coxa e sobrecoxa de frango (kg)': 'https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&fm=webp&q=85&w=900',
-  'Patinho bovino moido (kg)': 'https://images.unsplash.com/photo-1588347818036-558601350947?auto=format&fit=crop&fm=webp&q=85&w=900',
-  'Linguica toscana (kg)': 'https://clubedacharcutaria.com.br/images/linguica-toscana.jpg',
-  'File de tilapia (kg)': 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&fm=webp&q=85&w=900',
-  'Margarina Qualy 500g': 'https://down-br.img.susercontent.com/file/sg-11134201-7qvg7-lgu4v4elkttz6c',
-  'Queijo mussarela fatiado 400g': 'https://www.sondadelivery.com.br/img.aspx/sku/1000037805/530/NovoProjeto-6-.jpg',
-  'Presunto cozido fatiado 200g': 'https://lojazmart.com/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/1/8/180764_06988-2_2048x.jpg',
-  'Iogurte natural integral 900g': 'https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750644310769L.jpg',
-  'Leite integral UHT 1L': 'https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&fm=webp&q=85&w=900',
-  'Suco de uva integral 1L': 'https://redemix.vteximg.com.br/arquivos/ids/214476-1000-1000/7898942775314.jpg?v=638350626899700000',
-  'Refrigerante cola 2L': 'https://cdn.shopify.com/s/files/1/1075/8388/products/um69ot2cRHKejyrU88Qi_Coke-Regular-2L-5449000009067.jpeg?v=1571305381',
-  'Agua de coco 1L': 'https://lirp.cdn-website.com/7c4c3990/dms3rep/multi/opt/mockup+agua+de+coco+copiar-0808c76d-1920w.jpg',
-  'Atum ralado Gomes da Costa': 'https://images.unsplash.com/photo-1544943910-4c1dc44aab44?auto=format&fit=crop&fm=webp&q=85&w=900',
-  'Farinha de trigo Finna 1kg': 'https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&fm=webp&q=85&w=900',
-  'Feijao carioca 1kg Kicaldo': 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&fm=webp&q=85&w=900',
-  'Oleo de soja Soya 1L': 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&fm=webp&q=85&w=900',
-  'Arroz branco 1kg Camil': 'https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?auto=format&fit=crop&fm=webp&q=85&w=900',
-  'Macarrao espaguete 500g': 'https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&fm=webp&q=85&w=900',
-  'Molho de tomate 340g': 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&fm=webp&q=85&w=900'
-};
+const IMAGEM_NEUTRA = 'assets/images/products/_sem-imagem.svg';
+
+// Imagens locais: o catálogo usa fotos reais em `database/data.json`.
+// Todos os 24 produtos já têm foto local — nenhum SVG ilustrativo pendente.
+const LOCAL_IMAGENS_PRODUTOS = {};
 
 const receitas = [
   {
     id: 'empadao',
     titulo: 'Empadão cremoso de frango',
     descricao: 'Massa douradinha com frango, queijo e um recheio bem cremoso.',
-    imagem: 'https://i2.wp.com/s2.glbimg.com/-kp5aJQjf1kqwBOlWgwaLsrvqg8=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_1f540e0b94d8437dbbc39d567a1dee68/internal_photos/bs/2022/S/g/htV48vSjyZQH34ndV7aQ/maxresdefault.jpg',
+    imagem: 'https://cooknenjoy.com/wp-content/uploads/2021/05/empadao-frango-02-1-1200x901.jpg',
     ingredientes: [
       { id: 19, qtd: 1, medida: '1 pacote de 1 kg' },
       { id: 9, qtd: 1, medida: '1 pote de 500 g' },
@@ -161,15 +141,34 @@ function atualizarContaBtn() {
   }
 }
 
+const escAttr = (t) => String(t).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+
+// Ordem: arquivo local do catálogo -> URL de origem -> SVG local antigo -> imagem neutra.
 function imagemProduto(p) {
-  return IMAGENS_PRODUTOS[p.nome] || IMAGENS[p.categoria] || IMAGENS.mercearia;
+  return p.imagem || p.imagem_origem || LOCAL_IMAGENS_PRODUTOS[p.nome] || IMAGEM_NEUTRA;
 }
+
+// Fallbacks encadeados usados no onerror do <img> (sem repetir o que já falhou).
+function fallbacksImagem(p) {
+  const atual = imagemProduto(p);
+  return [p.imagem_origem, LOCAL_IMAGENS_PRODUTOS[p.nome], IMAGEM_NEUTRA]
+    .filter((u, i, a) => u && u !== atual && a.indexOf(u) === i);
+}
+
+function trocarImagem(img) {
+  const lista = JSON.parse(img.dataset.fallbacks || '[]');
+  const prox = lista.shift();
+  if (!prox) { img.onerror = null; return; }
+  img.dataset.fallbacks = JSON.stringify(lista);
+  img.src = prox;
+}
+window.trocarImagem = trocarImagem;
 
 function renderVitrine() {
   $('vitrine').innerHTML = produtos.length
     ? produtos.map((p) => `
    <article class="produto">
-    <div class="img"><img src="${imagemProduto(p)}" alt="Foto real de alimentos da categoria ${p.categoria}" loading="lazy" decoding="async"></div>
+    <div class="img"><img src="${escAttr(imagemProduto(p))}" alt="${escAttr(p.nome)}" loading="lazy" decoding="async" data-fallbacks='${escAttr(JSON.stringify(fallbacksImagem(p)))}' onerror="trocarImagem(this)"></div>
     <span class="categoria-badge">${p.categoria}</span>
     <h4>${p.nome}</h4>
     <div class="preco">${brl(p.preco)}</div>
@@ -312,6 +311,40 @@ $('receitasGrid').onclick = (e) => {
   }
 };
 
+function subtotalSelecionado() {
+  return Object.keys(carrinho).reduce((s, id) => {
+    const p = produtoDoCatalogo(id);
+    return s + (carrinho[id].marcado && p ? carrinho[id].qtd * p.preco : 0);
+  }, 0);
+}
+
+function normalizarTexto(valor) {
+  return String(valor || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().toLowerCase();
+}
+
+function calcularFretePorBairro(bairro) {
+  const b = normalizarTexto(bairro);
+  if (FRETES_CENTRAL.has(b)) return 8;
+  if (FRETES_12.has(b)) return 12;
+  return 0;
+}
+
+function atualizarFrete() {
+  const entrega = document.querySelector('input[name="entrega"]:checked')?.value;
+  if (entrega !== 'delivery') {
+    freteAtual = 0;
+  } else {
+    freteAtual = calcularFretePorBairro($('bairro').value);
+  }
+  const subtotal = subtotalSelecionado();
+  $('subtotal').textContent = brl(subtotal);
+  $('frete').textContent = freteAtual ? brl(freteAtual) : 'A calcular';
+  $('total').textContent = brl(subtotal + freteAtual);
+  $('freteMsg').textContent = freteAtual
+    ? `Taxa de entrega para ${$('bairro').value.trim()}: ${brl(freteAtual)}.`
+    : 'Informe um bairro de Candeias-BA para calcular a taxa.';
+}
+
 function atualizar() {
   const ids = Object.keys(carrinho);
   $('contador').textContent = ids.length;
@@ -328,10 +361,7 @@ function atualizar() {
     }).join('')
     : '<p class="vazio">Seu carrinho está vazio. Adicione produtos na vitrine ou em uma receita.</p>';
   $('todos').checked = ids.length > 0 && ids.every((id) => carrinho[id].marcado);
-  $('total').textContent = brl(ids.reduce((s, id) => {
-    const p = produtoDoCatalogo(id);
-    return s + (carrinho[id].marcado && p ? carrinho[id].qtd * p.preco : 0);
-  }, 0));
+  atualizarFrete();
 }
 
 $('itens').onclick = (e) => {
@@ -356,7 +386,11 @@ document.querySelectorAll('.opcoes').forEach((g) => {
   g.onchange = () => {
     g.querySelectorAll('.opcao').forEach((o) => o.classList.toggle('sel', o.querySelector('input').checked));
     const entrega = document.querySelector('input[name="entrega"]:checked')?.value;
+    const pagamento = document.querySelector('input[name="pgto"]:checked')?.value;
     $('enderecoBox').hidden = entrega !== 'delivery';
+    $('cartaoBox').hidden = !['debito', 'credito'].includes(pagamento);
+    $('parcelasField').hidden = pagamento !== 'credito';
+    atualizarFrete();
   };
 });
 
@@ -366,11 +400,31 @@ $('abrirCarrinho').onclick = abrir;
 $('voltar').onclick = fechar;
 $('modal').onclick = (e) => { if (e.target.id === 'modal') fechar(); };
 
+function aplicarFreteAutomaticamente() {
+  if (document.querySelector('input[name="entrega"]:checked')?.value !== 'delivery') return;
+  const cidade = normalizarTexto($('cidadeUf').value);
+  const bairro = $('bairro').value.trim();
+  if (cidade && !cidade.includes('candeias') && cidade.includes('/ ba')) {
+    freteAtual = 0;
+    $('freteMsg').textContent = 'A taxa automática está disponível para Candeias-BA.';
+    atualizarFrete();
+  } else {
+    freteAtual = calcularFretePorBairro(bairro);
+    atualizarFrete();
+  }
+}
+
 $('cep').addEventListener('input', (e) => {
   let v = e.target.value.replace(/\D/g, '').slice(0, 8);
   if (v.length > 5) v = v.slice(0, 5) + '-' + v.slice(5);
   e.target.value = v;
 });
+$('bairro').addEventListener('input', aplicarFreteAutomaticamente);
+$('cidadeUf').addEventListener('input', aplicarFreteAutomaticamente);
+$('cep').addEventListener('blur', () => {
+  if ($('cep').value.replace(/\D/g, '').length === 8) $('buscarCep').click();
+});
+
 $('buscarCep').onclick = async () => {
   const cep = $('cep').value.replace(/\D/g, '');
   if (cep.length !== 8) { $('cepMsg').textContent = 'Digite um CEP válido com 8 números.'; return; }
@@ -383,10 +437,57 @@ $('buscarCep').onclick = async () => {
     $('bairro').value = data.bairro || '';
     $('cidadeUf').value = `${data.localidade || ''} / ${data.uf || ''}`;
     $('cepMsg').textContent = 'CEP encontrado.';
+    aplicarFreteAutomaticamente();
   } catch (_err) {
     $('cepMsg').textContent = 'Não foi possível localizar o CEP.';
   }
 };
+
+function validarCartao() {
+  const numero = $('numeroCartao').value.replace(/\D/g, '');
+  const nome = $('nomeCartao').value.trim();
+  const validade = $('validadeCartao').value.trim();
+  const cvv = $('cvvCartao').value.replace(/\D/g, '');
+  const pagamento = document.querySelector('input[name="pgto"]:checked').value;
+
+  if (!['debito', 'credito'].includes(pagamento)) return { ok: true };
+
+  if (!/^\d{13,19}$/.test(numero) || !luhnValido(numero)) return { ok: false, msg: 'Confira o número do cartão.' };
+  if (nome.length < 3) return { ok: false, msg: 'Informe o nome impresso no cartão.' };
+  if (!/^((0[1-9])|(1[0-2]))\/\d{2}$/.test(validade)) return { ok: false, msg: 'Informe a validade no formato MM/AA.' };
+
+  const [mes, ano] = validade.split('/').map(Number);
+  const expira = new Date(2000 + ano, mes, 0, 23, 59, 59);
+  if (expira < new Date()) return { ok: false, msg: 'O cartão informado está vencido.' };
+  if (!/^\d{3,4}$/.test(cvv)) return { ok: false, msg: 'Informe um CVV válido.' };
+
+  const parcelas = pagamento === 'credito' ? Number($('parcelas').value) : 1;
+  return { ok: true, meta: { tipo: pagamento, ultimos4: numero.slice(-4), parcelas, nome: nome.slice(0, 80) } };
+}
+
+function luhnValido(numero) {
+  let soma = 0, dobrar = false;
+  for (let i = numero.length - 1; i >= 0; i--) {
+    let n = Number(numero[i]);
+    if (dobrar) { n *= 2; if (n > 9) n -= 9; }
+    soma += n;
+    dobrar = !dobrar;
+  }
+  return soma % 10 === 0;
+}
+
+$('numeroCartao').addEventListener('input', (e) => {
+  const v = e.target.value.replace(/\D/g, '').slice(0, 19);
+  e.target.value = v.replace(/(\d{4})(?=\d)/g, '$1 ').trim();
+});
+$('validadeCartao').addEventListener('input', (e) => {
+  let v = e.target.value.replace(/\D/g, '').slice(0, 4);
+  if (v.length > 2) v = `${v.slice(0, 2)}/${v.slice(2)}`;
+  e.target.value = v;
+});
+$('cvvCartao').addEventListener('input', (e) => {
+  e.target.value = e.target.value.replace(/\D/g, '').slice(0, 4);
+});
 
 $('finalizar').onclick = async () => {
   const marcados = Object.keys(carrinho).filter((id) => carrinho[id].marcado);
@@ -395,15 +496,25 @@ $('finalizar').onclick = async () => {
 
   const pagamento = document.querySelector('input[name="pgto"]:checked').value;
   const entrega = document.querySelector('input[name="entrega"]:checked').value;
+  const bairro = $('bairro').value.trim();
   const endereco = [
     $('logradouro').value.trim(),
     $('numero').value.trim() ? `nº ${$('numero').value.trim()}` : '',
     $('complemento').value.trim(),
-    $('bairro').value.trim(),
+    bairro,
     $('cidadeUf').value.trim(),
     $('cep').value.trim()
   ].filter(Boolean).join(', ');
+
   if (entrega === 'delivery' && endereco.length < 8) return aviso('Preencha o endereço de entrega ou busque pelo CEP.');
+  if (entrega === 'delivery') {
+    const cidade = normalizarTexto($('cidadeUf').value);
+    if (!cidade.includes('candeias') || !cidade.includes('/ ba')) return aviso('A entrega automática está disponível somente para Candeias-BA.');
+    if (!calcularFretePorBairro(bairro)) return aviso('Informe um bairro/região de Candeias-BA atendido para calcular o frete.');
+  }
+
+  const cartao = validarCartao();
+  if (!cartao.ok) return aviso(cartao.msg);
 
   try {
     const res = await fetch('/api/orders', {
@@ -412,8 +523,11 @@ $('finalizar').onclick = async () => {
       body: JSON.stringify({
         pagamento, entrega, endereco,
         cep: $('cep').value.trim(),
+        bairro,
+        cidade_uf: $('cidadeUf').value.trim(),
         complemento: $('complemento').value.trim(),
         instrucoes_entrega: $('instrucoes').value.trim(),
+        cartao: cartao.meta || null,
         items: marcados.map((id) => ({ id: Number(id), qtd: carrinho[id].qtd }))
       })
     });
@@ -444,7 +558,7 @@ async function carregarPedidos() {
       <ul>${p.items.map((i) => `<li>${i.qtd}x ${i.nome} — ${brl(i.preco * i.qtd)}</li>`).join('')}</ul>
       ${p.entrega === 'delivery' && p.endereco ? `<small class="pedido-endereco">Entrega: ${p.endereco}</small>` : ''}
       <div class="rodapePedido">
-       <span>${new Date(p.criado_em).toLocaleString('pt-BR')} · Total: ${brl(p.total)}</span>
+       <span>${new Date(p.criado_em).toLocaleString('pt-BR')} · ${p.frete ? `Frete: ${brl(p.frete)} · ` : ''}Total: ${brl(p.total)}</span>
        ${p.status === 'confirmado' ? `<button class="cancelar" data-cancelar="${p.id}">Cancelar pedido</button>` : ''}
       </div>
      </div>`).join('') : '<p class="vazio-pedidos">Você ainda não fez nenhum pedido.</p>';

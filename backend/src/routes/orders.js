@@ -2,6 +2,22 @@ const router = require('express').Router();
 const { produtos, pedidos, ErroEstoque } = require('../store');
 const { exigirLogin } = require('../middleware/auth');
 
+const FRETES_8 = new Set(['areia','santo antonio','urbis ii','centro','nova candeias','triangulo','malemba']);
+const FRETES_12 = new Set(['sarandy','distrito industrial','urbis i','nova brasilia','pitanga','area rural de candeias']);
+
+function normalizarTexto(valor) {
+  return String(valor || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().toLowerCase();
+}
+
+function calcularFrete(bairro, cidadeUf) {
+  const cidade = normalizarTexto(cidadeUf);
+  const b = normalizarTexto(bairro);
+  if (!cidade.includes('candeias') || !cidade.includes('/ ba')) return 0;
+  if (FRETES_8.has(b)) return 8;
+  if (FRETES_12.has(b)) return 12;
+  return 0;
+}
+
 // Criar pedido (Create) — preço e estoque vêm sempre do banco, nunca do que o navegador envia
 router.post('/', exigirLogin, (req, res) => {
   const items = Array.isArray(req.body.items) ? req.body.items : [];
@@ -12,11 +28,29 @@ router.post('/', exigirLogin, (req, res) => {
   const endereco = String(req.body.endereco || '').trim();
   const cep = String(req.body.cep || '').trim();
   const complemento = String(req.body.complemento || '').trim();
+  const bairro = String(req.body.bairro || '').trim();
+  const cidade_uf = String(req.body.cidade_uf || '').trim();
   const instrucoes_entrega = String(req.body.instrucoes_entrega || '').trim().slice(0, 250);
+  const cartao = req.body.cartao && typeof req.body.cartao === 'object' ? req.body.cartao : null;
   if (!items.length) return res.status(400).json({ erro: 'Selecione ao menos um item para finalizar.' });
   if (!['pix', 'debito', 'credito'].includes(pagamento)) return res.status(400).json({ erro: 'Forma de pagamento inválida.' });
   if (!['retirada', 'delivery'].includes(entrega)) return res.status(400).json({ erro: 'Opção de entrega inválida.' });
   if (entrega === 'delivery' && endereco.length < 8) return res.status(400).json({ erro: 'Informe o endereço de entrega.' });
+
+  if (['debito', 'credito'].includes(pagamento)) {
+    if (!cartao || String(cartao.tipo) !== pagamento || !/^\d{4}$/.test(String(cartao.ultimos4 || ''))) {
+      return res.status(400).json({ erro: 'Dados do cartão inválidos. Preencha o formulário do cartão.' });
+    }
+    if (pagamento === 'credito') {
+      const parcelas = Number(cartao.parcelas);
+      if (![1,2,3,4,5,6,8,10,12].includes(parcelas)) return res.status(400).json({ erro: 'Parcelamento inválido.' });
+    }
+  }
+
+  const frete = entrega === 'delivery' ? calcularFrete(bairro, cidade_uf) : 0;
+  if (entrega === 'delivery' && !frete) {
+    return res.status(400).json({ erro: 'Bairro/região não atendido para delivery em Candeias-BA.' });
+  }
 
   const detalhe = [];
   let total = 0;
@@ -43,7 +77,16 @@ router.post('/', exigirLogin, (req, res) => {
     cep: entrega === 'delivery' ? cep : null,
     complemento: entrega === 'delivery' ? complemento : null,
     instrucoes_entrega: entrega === 'delivery' ? instrucoes_entrega : null,
-    total: Number(total.toFixed(2)),
+    bairro: entrega === 'delivery' ? bairro : null,
+    cidade_uf: entrega === 'delivery' ? cidade_uf : null,
+    cartao: ['debito','credito'].includes(pagamento) ? {
+      tipo: cartao.tipo,
+      ultimos4: String(cartao.ultimos4),
+      parcelas: Number(cartao.parcelas || 1)
+    } : null,
+    subtotal: Number(total.toFixed(2)),
+    frete: Number(frete.toFixed(2)),
+    total: Number((total + frete).toFixed(2)),
     parceiro_id,
     mercado_nome: parceiro_id === null ? 'Smart Bag' : (req.body.mercado_nome || null),
     unidade_id: parceiro_id === null ? 'OFICIAL' : (req.body.unidade_id || null)

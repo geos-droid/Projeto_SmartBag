@@ -58,3 +58,23 @@ label.troca{display:block;font-size:.92rem;margin:18px 0 0;text-decoration:under
  .signup{padding:28px 22px 26px}
  .login{padding:30px 22px 26px}
 }
+
+
+/* Recuperação de senha */
+.esqueci{background:transparent !important;color:var(--texto) !important;text-decoration:underline;margin-top:10px;font-size:.88rem;height:auto;padding:6px;box-shadow:none}
+.esqueci:hover{background:transparent !important;transform:none !important;color:var(--cta) !important}
+.recuperacao-overlay{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px;background:rgba(20,12,6,.62);backdrop-filter:blur(3px)}
+.recuperacao-overlay[hidden]{display:none}
+.recuperacao-modal{position:relative;width:min(420px,100%);padding:28px;border-radius:22px;background:var(--creme);color:var(--texto);box-shadow:0 24px 70px rgba(0,0,0,.3)}
+.recuperacao-modal h2{margin:0 0 8px;font-size:1.5rem}
+.recuperacao-modal p{margin:0 0 18px;color:var(--texto);line-height:1.45}
+.recuperacao-modal form{display:flex;flex-direction:column;gap:8px}
+.recuperacao-modal form label{font-weight:700;font-size:.86rem}
+.recuperacao-modal form input{margin:0;background:var(--card-bg, #fff);border:1px solid var(--claro);color:var(--texto)}
+.recuperacao-modal form button{margin-top:8px;background:var(--cta);color:#fff}
+.fechar-recuperacao{position:absolute;top:12px;right:14px;width:36px;height:36px;margin:0;padding:0;border-radius:50%;background:transparent;color:var(--texto);font-size:1.5rem;line-height:1}
+.fechar-recuperacao:hover{background:var(--claro);transform:none}
+.recuperacao-msg{color:#1b5e20 !important;margin:8px 0 0 !important}
+html[data-tema="escuro"] .recuperacao-modal{background:#21170f}
+html[data-tema="escuro"] .recuperacao-modal form input{background:#17100b;color:#f5ead9;border-color:#5b4228}
+html[data-tema="escuro"] .esqueci{color:#f5ead9 !important}

@@ -7,7 +7,9 @@
     "backend": "node backend/src/server.js",
     "frontend": "vite --host --port 5173",
     "dev": "concurrently -k \"npm run backend\" \"npm run frontend\"",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "imagens:baixar": "node scripts/imagens-produtos.mjs baixar",
+    "imagens:verificar": "node scripts/imagens-produtos.mjs verificar"
   },
   "dependencies": {
     "express": "^4.21.2"

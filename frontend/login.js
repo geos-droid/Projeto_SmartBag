@@ -73,3 +73,25 @@ $('#formLogin').onsubmit = async (e) => {
 };
 
 if (location.hash === '#parceiro') { const r = document.querySelector('input[name="tipo"][value="parceiro"]'); if (r) { r.checked = true; atualizarCamposMercado(); chk.checked = false; } }
+
+
+// Recuperação de senha: fluxo visual preparado para integração com serviço de e-mail.
+const recuperacaoOverlay = $('#recuperacaoOverlay');
+const abrirRecuperacao = () => {
+  recuperacaoOverlay.hidden = false;
+  $('#emailRecuperacao').value = $('#formLogin').email.value.trim();
+  $('#emailRecuperacao').focus();
+};
+const fecharRecuperacao = () => { recuperacaoOverlay.hidden = true; };
+$('#esqueciSenha').addEventListener('click', abrirRecuperacao);
+$('#fecharRecuperacao').addEventListener('click', fecharRecuperacao);
+recuperacaoOverlay.addEventListener('click', (e) => { if (e.target === recuperacaoOverlay) fecharRecuperacao(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !recuperacaoOverlay.hidden) fecharRecuperacao(); });
+$('#formRecuperacao').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const email = $('#emailRecuperacao').value.trim().toLowerCase();
+  const out = $('#msgRecuperacao');
+  out.classList.remove('ok');
+  out.textContent = 'Se o e-mail estiver cadastrado, as instruções de recuperação serão enviadas.';
+  out.classList.add('ok');
+});

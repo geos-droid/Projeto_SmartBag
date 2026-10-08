@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS products (
   fab           TEXT NOT NULL,             -- dd/mm/aa
   val           TEXT NOT NULL,             -- dd/mm/aa
   emoji         TEXT,
+  imagem        TEXT,
   ativo         INTEGER NOT NULL DEFAULT 1,
   parceiro_id   INTEGER REFERENCES users(id)   -- NULL = catálogo oficial da Smart Bag
 );
@@ -45,7 +46,14 @@ CREATE TABLE IF NOT EXISTS orders (
   endereco      TEXT,
   cep           TEXT,
   complemento   TEXT,
+  bairro        TEXT,
+  cidade_uf     TEXT,
   instrucoes_entrega TEXT,
+  pagamento_tipo_cartao TEXT,
+  cartao_ultimos4 TEXT,
+  parcelas      INTEGER,
+  subtotal      REAL NOT NULL,
+  frete         REAL NOT NULL DEFAULT 0,
   total         REAL NOT NULL,
   status        TEXT NOT NULL DEFAULT 'confirmado' CHECK (status IN ('confirmado','cancelado')),
   criado_em     TEXT NOT NULL

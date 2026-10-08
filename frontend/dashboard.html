@@ -66,6 +66,40 @@
    <label class="opcao"><input type="radio" name="pgto" value="credito"> Cartão de crédito</label>
   </div>
 
+  <div class="cartao-box" id="cartaoBox" hidden>
+   <div class="cartao-cabecalho">
+    <h3>Dados do cartão</h3>
+    <small>Seus dados completos do cartão não são armazenados pela Smart Bag.</small>
+   </div>
+   <div class="cartao-grid">
+    <label class="cartao-numero">Número do cartão
+      <input id="numeroCartao" inputmode="numeric" autocomplete="cc-number" maxlength="23" placeholder="0000 0000 0000 0000">
+    </label>
+    <label>Nome impresso no cartão
+      <input id="nomeCartao" autocomplete="cc-name" maxlength="80" placeholder="Como aparece no cartão">
+    </label>
+    <label>Data de validade
+      <input id="validadeCartao" inputmode="numeric" autocomplete="cc-exp" maxlength="5" placeholder="MM/AA">
+    </label>
+    <label>CVV
+      <input id="cvvCartao" inputmode="numeric" autocomplete="cc-csc" maxlength="4" placeholder="123">
+    </label>
+    <label id="parcelasField" hidden>Parcelamento
+      <select id="parcelas">
+       <option value="1">1x sem juros</option>
+       <option value="2">2x sem juros</option>
+       <option value="3">3x sem juros</option>
+       <option value="4">4x sem juros</option>
+       <option value="5">5x sem juros</option>
+       <option value="6">6x sem juros</option>
+       <option value="8">8x sem juros</option>
+       <option value="10">10x sem juros</option>
+       <option value="12">12x sem juros</option>
+      </select>
+    </label>
+   </div>
+  </div>
+
   <h3>Opções de entrega</h3>
   <div class="opcoes" data-grupo="entrega">
    <label class="opcao sel"><input type="radio" name="entrega" value="retirada" checked> Retirada</label>
@@ -86,6 +120,11 @@
     <label>Cidade / UF<input id="cidadeUf" autocomplete="address-level2"></label>
    </div>
    <label class="instr-label">Instruções de entrega (opcional)<textarea id="instrucoes" rows="2" maxlength="250" placeholder="Ex.: deixar na portaria"></textarea></label>
+   <div class="frete-resumo" aria-live="polite">
+    <div><span>Subtotal</span><strong id="subtotal">R$ 0,00</strong></div>
+    <div class="frete-linha"><span>Delivery</span><strong id="frete">A calcular</strong></div>
+    <small id="freteMsg">Informe um bairro de Candeias-BA para calcular a taxa.</small>
+   </div>
   </div>
 
   <div class="rodape">

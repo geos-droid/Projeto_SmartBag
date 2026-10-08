@@ -36,6 +36,13 @@ function validar(body) {
   return null;
 }
 
+// Imagem opcional do produto: caminho local do frontend (assets/...) ou URL https.
+function imagemValida(v) {
+  if (v === undefined || v === null || v === '') return null;
+  const t = String(v).trim().slice(0, 500);
+  return /^(assets\/[\w\-./]+|https:\/\/\S+)$/i.test(t) && !t.includes('..') ? t : null;
+}
+
 // Cadastrar produto (Create) — só parceiro logado, dono automaticamente
 router.post('/', exigirParceiro, (req, res) => {
   const erro = validar(req.body);
@@ -43,7 +50,8 @@ router.post('/', exigirParceiro, (req, res) => {
   const { nome, categoria, preco, estoque, fab, val, emoji } = req.body;
   const p = produtos.criar({
     nome: nome.trim(), categoria: categoria.trim(), preco: Number(preco), estoque: Number(estoque),
-    fab: fab.trim(), val: val.trim(), emoji: String(emoji || nome).trim().slice(0, 24), parceiro_id: req.usuario.id
+    fab: fab.trim(), val: val.trim(), emoji: String(emoji || nome).trim().slice(0, 24), parceiro_id: req.usuario.id,
+    ...(imagemValida(req.body.imagem) ? { imagem: imagemValida(req.body.imagem) } : {})
   });
   res.status(201).json(p);
 });
@@ -59,7 +67,8 @@ router.put('/:id', exigirParceiro, (req, res) => {
   const atualizado = produtos.atualizar(p.id, {
     nome: String(nome).trim(), categoria: String(categoria).trim(), preco: Number(preco), estoque: Number(estoque),
     fab: String(fab).trim(), val: String(val).trim(), emoji: String(emoji || nome).trim().slice(0, 24),
-    ativo: ativo !== undefined ? !!ativo : p.ativo
+    ativo: ativo !== undefined ? !!ativo : p.ativo,
+    ...(imagemValida(req.body.imagem) ? { imagem: imagemValida(req.body.imagem) } : {})
   });
   res.json(atualizado);
 });

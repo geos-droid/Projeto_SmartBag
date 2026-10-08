@@ -2,3 +2,7 @@ node_modules/
 dist/
 .DS_Store
 *.log
+# backups locais (não versionar)
+backup-imagens-*.zip
+# artefato de download da foto do vinho (a foto final está em frontend/assets/images/products/)
+vinho-1284755.jpg

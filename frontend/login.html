@@ -42,10 +42,25 @@
    <input type="email" name="email" placeholder="E-mail" required autocomplete="email">
    <input type="password" name="senha" placeholder="Senha" required autocomplete="current-password">
    <button>Entrar</button>
+   <button type="button" class="esqueci" id="esqueciSenha">Esqueci minha senha</button>
    <p class="msg" id="msgLogin" role="alert"></p>
    <label for="chk" class="troca">Ainda nao tem conta? Cadastre-se</label>
   </form>
  </div>
+</div>
+
+<div class="recuperacao-overlay" id="recuperacaoOverlay" hidden>
+ <section class="recuperacao-modal" role="dialog" aria-modal="true" aria-labelledby="tituloRecuperacao">
+  <button type="button" class="fechar-recuperacao" id="fecharRecuperacao" aria-label="Fechar recuperação">×</button>
+  <h2 id="tituloRecuperacao">Recuperar senha</h2>
+  <p>Informe o e-mail usado na sua conta para iniciar a recuperação.</p>
+  <form id="formRecuperacao">
+   <label for="emailRecuperacao">E-mail</label>
+   <input id="emailRecuperacao" type="email" autocomplete="email" placeholder="seuemail@exemplo.com" required>
+   <button type="submit">Continuar</button>
+   <p class="msg recuperacao-msg" id="msgRecuperacao" role="status"></p>
+  </form>
+ </section>
 </div>
 <script src="session.js"></script>
 <script src="login.js"></script>

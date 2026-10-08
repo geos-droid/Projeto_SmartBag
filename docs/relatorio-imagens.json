@@ -1,0 +1,15 @@
+{
+  "data": "2026-10-08",
+  "resumo": {
+    "total": 24,
+    "locaisValidas": 24,
+    "remotasAinda": 0,
+    "svgFallback": 0,
+    "ausentes": 0,
+    "invalidas": 0,
+    "duplicadas": 0,
+    "conferidas": 24
+  },
+  "download": [],
+  "pendentes": []
+}
