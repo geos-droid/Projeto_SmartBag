@@ -3,20 +3,22 @@
 ## Capa
 
 - **Sistema:** Smart Bag — Do desperdício à sacola inteligente
-- **Equipe:** *(preencher com os nomes completos dos integrantes)*
+- **Equipe:** *Ana Caroline de Oliveira Ferreira, Geovana de Santana dos Santos, Larissa Oliveira da Silva, Paulo Aldo de Oliveira Neto e Yasmin Santos Ribeiro*
 - **Instituição:** SENAI Candeias
 - **Professor orientador:** Adalberto Santana
 - **Versão:** v1.0 — versão final para apresentação
 
 ## Integrantes da equipe
 
-> *(preencher)*
+> *Ana Caroline de Oliveira Ferreira, Geovana de Santana dos Santos, Larissa Oliveira da Silva, Paulo Aldo de Oliveira Neto e Yasmin Santos Ribeiro*
 
 | Nome | Função no projeto |
 |---|---|
-| Integrante 1 | |
-| Integrante 2 | |
-| Integrante 3 | |
+| **Ana Caroline de Oliveira Ferreira** | UI/UX Designer, Documentação Técnica e Apresentação |
+| **Geovana de Santana dos Santos** | Desenvolvedora Full-stack, Banco de Dados (JSON/SQL) e Apresentação |
+| **Larissa Oliveira da Silva** | Pesquisa de Mercado e Apresentação |
+| **Paulo Aldo de Oliveira Neto** | Pesquisa de Mercado, Documentação Técnica e Apresentação |
+| **Yasmin Santos Ribeiro** | Desenvolvedora Front-end, Layout e Apresentação |
 
 ## Descrição do projeto
 

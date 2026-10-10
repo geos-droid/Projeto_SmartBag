@@ -27,7 +27,7 @@ const receitas = [
     id: 'empadao',
     titulo: 'Empadão cremoso de frango',
     descricao: 'Massa douradinha com frango, queijo e um recheio bem cremoso.',
-    imagem: 'https://cooknenjoy.com/wp-content/uploads/2021/05/empadao-frango-02-1-1200x901.jpg',
+    imagem: 'assets/images/receitas/empadao.jpg',
     ingredientes: [
       { id: 19, qtd: 1, medida: '1 pacote de 1 kg' },
       { id: 9, qtd: 1, medida: '1 pote de 500 g' },
@@ -40,7 +40,7 @@ const receitas = [
     id: 'macarrao-carne',
     titulo: 'Macarrão com carne e molho',
     descricao: 'Almoço rápido usando macarrão, carne moída e molho de tomate da loja.',
-    imagem: 'https://www.guiadasemana.com.br/contentFiles/image/2017/05/FEA/principal/51266_w840h0_1493907179espaguete.jpg',
+    imagem: 'assets/images/receitas/macarrao-carne.jpg',
     ingredientes: [
       { id: 23, qtd: 1, medida: '1 pacote de 500 g' },
       { id: 6, qtd: 1, medida: '500 g de carne moída' },
@@ -53,7 +53,7 @@ const receitas = [
     id: 'arroz-frango',
     titulo: 'Arroz cremoso de frango',
     descricao: 'Uma receita prática para o almoço com arroz, frango, molho e queijo.',
-    imagem: 'https://img.elnueve.com.ar/sites/default/files/styles/2_1_max_1024px/public/2025-06/WhatsApp%20Image%202025-06-05%20at%2015.19.57%20%281%29.jpeg?h=a92f03cd&itok=EKngenTp',
+    imagem: 'assets/images/receitas/arroz-frango.jpg',
     ingredientes: [
       { id: 22, qtd: 1, medida: '1 pacote de 1 kg' },
       { id: 5, qtd: 1, medida: '1 kg' },
@@ -65,7 +65,7 @@ const receitas = [
     id: 'sanduiche',
     titulo: 'Sanduíche de presunto e queijo',
     descricao: 'Lanche simples e rápido feito com produtos da padaria e da seção de frios.',
-    imagem: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&fm=webp&q=85&w=1000',
+    imagem: 'assets/images/receitas/sanduiche.jpg',
     ingredientes: [
       { id: 1, qtd: 1, medida: '1 pacote de pão integral' },
       { id: 11, qtd: 1, medida: '1 pacote de 200 g' },
@@ -77,7 +77,7 @@ const receitas = [
     id: 'atum',
     titulo: 'Patê cremoso de atum',
     descricao: 'Opção prática para acompanhar pães e torradas, com ingredientes encontrados na Smart Bag.',
-    imagem: 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&fm=webp&q=85&w=1000',
+    imagem: 'assets/images/receitas/atum.jpg',
     ingredientes: [
       { id: 18, qtd: 1, medida: '1 lata' },
       { id: 9, qtd: 1, medida: '1 pote de 500 g' },
@@ -89,7 +89,7 @@ const receitas = [
     id: 'feijao-arroz',
     titulo: 'Arroz com feijão do dia a dia',
     descricao: 'Combinação clássica para montar uma refeição completa com itens da mercearia.',
-    imagem: 'https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?auto=format&fit=crop&fm=webp&q=85&w=1000',
+    imagem: 'assets/images/receitas/feijao-arroz.jpg',
     ingredientes: [
       { id: 22, qtd: 1, medida: '1 pacote de 1 kg' },
       { id: 20, qtd: 1, medida: '1 pacote de 1 kg' },
@@ -148,7 +148,7 @@ function imagemProduto(p) {
   return p.imagem || p.imagem_origem || LOCAL_IMAGENS_PRODUTOS[p.nome] || IMAGEM_NEUTRA;
 }
 
-// Fallbacks encadeados usados no onerror do <img> (sem repetir o que já falhou).
+// Fallbacks encadeados usados no onerror do <img>.
 function fallbacksImagem(p) {
   const atual = imagemProduto(p);
   return [p.imagem_origem, LOCAL_IMAGENS_PRODUTOS[p.nome], IMAGEM_NEUTRA]

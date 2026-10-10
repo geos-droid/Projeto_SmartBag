@@ -1,19 +1,19 @@
 {
   "users": [],
   "sessions": [],
-  "products": [
+ "products": [
     {
       "id": 1,
       "nome": "Pao integral Pullman",
       "categoria": "padaria",
       "preco": 5.7,
       "estoque": 18,
-      "fab": "23/09/26",
-      "val": "07/10/26",
+      "fab": "05/10/26",
+      "val": "25/10/26",
       "emoji": "Pao",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://mercantilnovaera.vtexassets.com/arquivos/ids/197670/Pao-de-Forma-PULLMAN-Integral-Pacote-480g.jpg?v=637855455926030000"
+      "imagem": "assets/images/products/pao-integral-pullman.jpg"
     },
     {
       "id": 2,
@@ -21,12 +21,12 @@
       "categoria": "padaria",
       "preco": 9.9,
       "estoque": 25,
-      "fab": "28/09/26",
-      "val": "29/09/26",
+      "fab": "08/10/26",
+      "val": "28/10/26",
       "emoji": "Pao frances",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://www.bembrasmarket.com/cdn/shop/files/rn-image_picker_lib_temp_125b6075-787d-4773-9fbb-56f952bdac33.png?v=1744486997"
+      "imagem": "assets/images/products/pao-frances-kg.jpg"
     },
     {
       "id": 3,
@@ -34,12 +34,12 @@
       "categoria": "padaria",
       "preco": 12.5,
       "estoque": 8,
-      "fab": "27/09/26",
-      "val": "01/10/26",
+      "fab": "05/10/26",
+      "val": "26/10/26",
       "emoji": "Bolo",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://hortifrutibr.vtexassets.com/arquivos/ids/156586/Bolo-de-Fuba-Sabor-Caseiro-500g.jpg?v=638671093207430000&format=webp"
+      "imagem": "assets/images/products/bolo-de-fuba-caseiro.jpg"
     },
     {
       "id": 4,
@@ -47,12 +47,12 @@
       "categoria": "padaria",
       "preco": 6.4,
       "estoque": 20,
-      "fab": "29/08/26",
-      "val": "27/11/26",
+      "fab": "28/04/26",
+      "val": "27/10/26",
       "emoji": "Torrada",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://lojabauducco.vteximg.com.br/arquivos/ids/158928/7891962053189.jpg?v=638326542073130000"
+      "imagem": "assets/images/products/torrada-bauducco.jpg"
     },
     {
       "id": 5,
@@ -60,12 +60,12 @@
       "categoria": "acougue",
       "preco": 11.9,
       "estoque": 15,
-      "fab": "27/09/26",
-      "val": "30/09/26",
+      "fab": "06/10/26",
+      "val": "28/10/26",
       "emoji": "Frango",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://mercantilnovaera.vteximg.com.br/arquivos/ids/179109-1000-1000/Coxa-Sobrecoxa-de-Frango-Aurora-Bandeja-1Kg.jpg?v=637562664620930000"
+      "imagem": "assets/images/products/coxa-sobrecoxa-de-frango-aurora-bandeja-1kg.jpg "
     },
     {
       "id": 6,
@@ -73,12 +73,12 @@
       "categoria": "acougue",
       "preco": 28.9,
       "estoque": 10,
-      "fab": "27/09/26",
-      "val": "30/09/26",
+      "fab": "07/10/26",
+      "val": "29/10/26",
       "emoji": "Carne moida",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://static.extramercado.com.br/img/uploads/1/491/33192491.jpg?im=Resize%2Cwidth%3D200"
+      "imagem": "assets/images/products/patinho-bovino-moido-1kg.jpg"
     },
     {
       "id": 7,
@@ -86,12 +86,12 @@
       "categoria": "acougue",
       "preco": 16.5,
       "estoque": 12,
-      "fab": "26/09/26",
-      "val": "01/10/26",
+      "fab": "01/10/26",
+      "val": "30/10/26",
       "emoji": "Linguica",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://gbarbosa.vtexassets.com/arquivos/ids/264673/68310281bef318b6a0818656.jpg?v=638836391695030000"
+      "imagem": "assets/images/products/linguica-toscana-1kg.jpg"
     },
     {
       "id": 8,
@@ -99,12 +99,12 @@
       "categoria": "acougue",
       "preco": 24.9,
       "estoque": 6,
-      "fab": "27/09/26",
-      "val": "29/09/26",
+      "fab": "07/10/26",
+      "val": "26/10/26",
       "emoji": "Peixe",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://gbarbosa.vtexassets.com/arquivos/ids/275485-800-auto?aspect=true&height=auto&v=639000132412570000&width=800"
+      "imagem": "assets/images/products/file-de-tilapia-1kg.jpg"
     },
     {
       "id": 9,
@@ -112,12 +112,12 @@
       "categoria": "frios",
       "preco": 5.99,
       "estoque": 15,
-      "fab": "08/09/26",
-      "val": "23/10/26",
+      "fab": "15/07/26",
+      "val": "25/10/26",
       "emoji": "Margarina",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://storage.googleapis.com/phygital_files/jpavani/uploads/produto/margarina_sadia_qualy_cremosa_com_sal_500g_2a195a60-94ea-421c-9073-b3c52b79a02e.png"
+      "imagem": "assets/images/products/margarina-qualy-500g.jpg"
     },
     {
       "id": 10,
@@ -125,12 +125,12 @@
       "categoria": "frios",
       "preco": 14.9,
       "estoque": 10,
-      "fab": "18/09/26",
-      "val": "10/10/26",
+      "fab": "28/09/26",
+      "val": "27/10/26",
       "emoji": "Queijo",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://pamplonab2b.vtexassets.com/arquivos/ids/155501/22019---Queijo-Mussarela_Fatiado_-400g.jpg.jpg?v=638895648780870000"
+      "imagem": "assets/images/products/queijo-mussarela-fatiado-400g.jpg"
     },
     {
       "id": 11,
@@ -138,12 +138,12 @@
       "categoria": "frios",
       "preco": 8.5,
       "estoque": 14,
-      "fab": "23/09/26",
-      "val": "06/10/26",
+      "fab": "01/10/26",
+      "val": "26/10/26",
       "emoji": "Presunto",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://assets.ibecom.com.br/ib.item.image.large/l-d9dffd5d4780418ca064720cb3cc66fd.jpeg"
+      "imagem": "assets/images/products/presunto-cozido-fatiado-200g.jpg"
     },
     {
       "id": 12,
@@ -151,12 +151,12 @@
       "categoria": "frios",
       "preco": 7.2,
       "estoque": 18,
-      "fab": "25/09/26",
-      "val": "08/10/26",
+      "fab": "20/09/26",
+      "val": "29/10/26",
       "emoji": "Iogurte",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://phygital-files.mercafacil.com/betinho-bucket/uploads/produto/iogurte_natural_splat_gf_900g_integral_ab786ff4-a240-4c6f-a76a-498b7eb207bc.jpg"
+      "imagem": "assets/images/products/iogurte-natural-integral-900g.jpg"
     },
     {
       "id": 13,
@@ -164,12 +164,12 @@
       "categoria": "frios",
       "preco": 4.6,
       "estoque": 30,
-      "fab": "13/09/26",
-      "val": "12/11/26",
+      "fab": "28/06/26",
+      "val": "28/10/26",
       "emoji": "Leite",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://static.extramercado.com.br/img/uploads/1/159/33294159.jpg?im=Resize%2Cwidth%3D200"
+      "imagem": "assets/images/products/leite-integral-uht-1l.jpg"
     },
     {
       "id": 14,
@@ -177,12 +177,12 @@
       "categoria": "bebidas",
       "preco": 9.9,
       "estoque": 20,
-      "fab": "18/09/26",
-      "val": "27/12/26",
+      "fab": "25/04/26",
+      "val": "25/10/26",
       "emoji": "Suco",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://estreladistribuicao.agilecdn.com.br/734532.jpg"
+      "imagem": "assets/images/products/suco-de-uva-integral-1l.jpg"
     },
     {
       "id": 15,
@@ -190,12 +190,12 @@
       "categoria": "bebidas",
       "preco": 7.5,
       "estoque": 25,
-      "fab": "29/08/26",
-      "val": "25/02/27",
+      "fab": "29/04/26",
+      "val": "29/10/26",
       "emoji": "Refrigerante",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://static.wixstatic.com/media/bc10b0_454a6bf5433b406997e5765bf1627d4d~mv2_d_1200_1200_s_2.jpg/v1/fill/w_996%2Ch_996%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01/bc10b0_454a6bf5433b406997e5765bf1627d4d~mv2_d_1200_1200_s_2.jpg"
+      "imagem": "assets/images/products/refrigerante-cola-2l.jpg"
     },
     {
       "id": 16,
@@ -203,12 +203,12 @@
       "categoria": "bebidas",
       "preco": 22.9,
       "estoque": 8,
-      "fab": "30/07/26",
-      "val": "25/07/27",
+      "fab": "30/10/24",
+      "val": "30/10/26",
       "emoji": "Vinho",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "assets/images/products/vinho-tinto-seco-750ml.svg"
+      "imagem": "assets/images/products/vinho-tinto-seco-750ml.jpg"
     },
     {
       "id": 17,
@@ -216,12 +216,12 @@
       "categoria": "bebidas",
       "preco": 6.9,
       "estoque": 16,
-      "fab": "23/09/26",
-      "val": "18/10/26",
+      "fab": "01/07/26",
+      "val": "27/10/26",
       "emoji": "Agua de coco",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://d3gdr9n5lqb5z7.cloudfront.net/fotos/937960-18-07-2023-15-05-52-984.jpg"
+      "imagem": "assets/images/products/agua-de-coco-1l.jpg"
     },
     {
       "id": 18,
@@ -229,12 +229,12 @@
       "categoria": "mercearia",
       "preco": 5.5,
       "estoque": 24,
-      "fab": "10/09/26",
-      "val": "27/11/26",
+      "fab": "28/10/23",
+      "val": "28/10/26",
       "emoji": "Atum",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://fortatacadista.vteximg.com.br/arquivos/ids/293873-1000-1000/7891167011748.jpg?v=637619911457370000"
+      "imagem": "assets/images/products/atum-ralado-gomes-da-costa.jpg"
     },
     {
       "id": 19,
@@ -242,12 +242,12 @@
       "categoria": "mercearia",
       "preco": 3.89,
       "estoque": 30,
-      "fab": "30/07/26",
-      "val": "26/01/27",
+      "fab": "26/04/26",
+      "val": "26/10/26",
       "emoji": "Farinha",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://mercantilatacado.vtexassets.com/arquivos/ids/192500/6952c11e66357c7c27552c62.png?v=639026278760430000"
+      "imagem": "assets/images/products/farinha-de-trigo-finna-1kg.jpg" 
     },
     {
       "id": 20,
@@ -255,12 +255,12 @@
       "categoria": "mercearia",
       "preco": 4.9,
       "estoque": 40,
-      "fab": "18/09/26",
-      "val": "27/03/27",
+      "fab": "30/04/26",
+      "val": "30/10/26",
       "emoji": "Feijao",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://mambodelivery.vtexassets.com/arquivos/ids/167357/feijao-carioca-tipo-1-kicaldo-1kg.jpg?v=637883236210600000"
+      "imagem": "assets/images/products/feijao-carioca-kicaldo-1kg.jpg"
     },
     {
       "id": 21,
@@ -268,12 +268,12 @@
       "categoria": "mercearia",
       "preco": 4.0,
       "estoque": 40,
-      "fab": "13/09/26",
-      "val": "16/04/27",
+      "fab": "25/10/25",
+      "val": "25/10/26",
       "emoji": "Oleo",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://www.jauserve.com.br/dw/image/v2/BFJL_PRD/on/demandware.static/-/Sites-jauserve-master/default/dw90d40272/7891107101621.png?sw=1800"
+      "imagem": "assets/images/products/oleo-de-soja-soya-1l.jpg" 
     },
     {
       "id": 22,
@@ -281,12 +281,12 @@
       "categoria": "mercearia",
       "preco": 6.0,
       "estoque": 40,
-      "fab": "18/09/26",
-      "val": "16/04/27",
+      "fab": "29/10/25",
+      "val": "29/10/26",
       "emoji": "Arroz",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://superadega.agilecdn.com.br/305945.jpg?v=512-2631630625"
+      "imagem": "assets/images/products/arroz-branco-1kg-camil.jpg"
     },
     {
       "id": 23,
@@ -294,12 +294,12 @@
       "categoria": "mercearia",
       "preco": 3.2,
       "estoque": 35,
-      "fab": "08/09/26",
-      "val": "25/02/27",
+      "fab": "27/10/24",
+      "val": "27/10/26",
       "emoji": "Macarrao",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://mnh.com.br/cdn/shop/files/5233MASSAADRIAGRANODOROSPAGHETTI24x500g.png?v=1701894816"
+      "imagem": "assets/images/products/macarrao-espaguete-500g.jpg"
     },
     {
       "id": 24,
@@ -307,14 +307,14 @@
       "categoria": "mercearia",
       "preco": 2.8,
       "estoque": 28,
-      "fab": "03/09/26",
-      "val": "26/01/27",
+      "fab": "26/10/25",
+      "val": "26/10/26",
       "emoji": "Molho de tomate",
       "ativo": true,
       "parceiro_id": null,
-      "imagem": "https://supernova.vteximg.com.br/arquivos/ids/155936-1000-1000/Molho-de-Tomate-Tradicional-340Gr---Quero.jpg?v=637157550722470000"
+      "imagem": "assets/images/products/molho-de-tomate-340g.jpg"
     }
-  ],
+],
   "orders": [],
   "messages": []
 }

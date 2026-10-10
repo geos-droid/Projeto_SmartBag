@@ -1,6 +1,3 @@
--- Smart Bag: modelo relacional. O protótipo persiste os mesmos dados em database/data.json
--- (arquivo único, sem exigir um servidor de banco instalado); este .sql documenta como as
--- mesmas informações se organizariam em tabelas, para uma futura migração a um SGBD real.
 
 CREATE TABLE IF NOT EXISTS users (
   id            INTEGER PRIMARY KEY AUTOINCREMENT,
